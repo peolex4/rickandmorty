@@ -1,6 +1,6 @@
 # Rick and Morty characters
 
-I made an this app using [Angular](https://angular.io/), [Angular Material](https://material.angular.io/) (both latest versions: 12.1.1) and [Lodash](https://lodash.com/) as utility library.
+I made an this app using [Angular](https://angular.io/), [Angular Material](https://material.angular.io/) (both versions: 12.1.1) and [Lodash](https://lodash.com/) as utility library.
 
 The goal is to display [Rick and Morty](https://it.wikipedia.org/wiki/Rick_and_Morty) profile characters info taking them from [Rick and Morty API](https://rickandmortyapi.com/):
 
