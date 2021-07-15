@@ -1,0 +1,46 @@
+<h1 class="title">{{ title }}</h1>
+<div class="characters-container">
+    <mat-card *ngFor="let character of characters?.results" class="character">
+
+        <mat-card-title>{{ character.name }}</mat-card-title>
+        <mat-card-subtitle>
+            <mat-icon [class.alive]="character.status === 'Alive'" [class.dead]="character.status === 'Dead'"
+                class="status-indicator">circle</mat-icon>
+            <span>{{ character.status }} - {{ character.species }}</span>
+        </mat-card-subtitle>
+
+        <img mat-card-image [src]="character.image" alt="Photo of {{ character.name }}">
+        <mat-card-content>
+
+            <strong>Origin: </strong> {{ character.origin.name }}
+            <ul>
+                <li *ngIf="character.origin.dimension">
+                    Dimension: {{ character.origin.dimension }}
+                </li>
+                <li *ngIf="character.origin.amountOfResidents">
+                    Residents: {{ character.origin.amountOfResidents }}
+                </li>
+            </ul>
+
+            <strong>Last location: </strong>{{ character.location.name }}
+            <ul>
+                <li *ngIf="character.location.dimension">
+                    Dimension: {{ character.location.dimension }}
+                </li>
+                <li *ngIf="character.location.amountOfResidents">
+                    Residents: {{ character.location.amountOfResidents }}
+                </li>
+            </ul>
+
+            <div class="episode">
+                <span>First seen in: </span>
+                <a [href]="character.url" rel="nofollow noopener noreferrer"
+                    target="_blank">{{character.firstSeenIn}}</a>
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+</div>
+<mat-paginator [length]="characters?.info?.count" [pageSize]="20" [disabled]="loading" (page)="loadCharacters($event);"
+    showFirstLastButtons>
+</mat-paginator>

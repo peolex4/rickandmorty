@@ -1,0 +1,35 @@
+.title {
+    margin: 50px;
+    font-size: 3em;
+    font-weight: normal;
+}
+.characters-container {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    margin-top: 50px;
+    .character.mat-card {
+        max-width: 250px;
+        margin: 20px;
+        .mat-card-title {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .mat-icon.status-indicator {
+            font-size: x-small;
+            width: 16px;
+            &.alive {
+                color: green;
+            }
+            &.dead {
+                color: red;
+            }
+        }
+        .episode {
+            a {
+                color: black;
+            }
+        }
+    }
+}
